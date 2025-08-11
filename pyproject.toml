@@ -10,9 +10,9 @@ repository = "https://github.com/bmmtstb/manim-meshes"
 
 [tool.poetry.dependencies]
 python = "^3.8.18"
-decorator = "^5.0.9"
-manim = "^0.16.0"
-numpy = "^1.24.0"
+decorator = ">=5.0.9"
+manim = ">=0.16.0"   
+numpy = ">=1.24.0"
 trimesh = "^3.12.5"
 moderngl = "*"
 
@@ -21,6 +21,8 @@ meshio = "^5.3.4"
 pylint = "3.0.2"
 pytest = "^7.2.0"
 typing = "^3.7"
+ManimPango = "^0.4.1"
+
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
