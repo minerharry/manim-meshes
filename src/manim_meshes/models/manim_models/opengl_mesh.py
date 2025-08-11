@@ -43,6 +43,7 @@ class FastManimMesh(OpenGLMobject):
         if any(len(face) != 3 for face in mesh.faces):
             raise ValueError("mesh must only consist of triangles!")
         self.mesh = mesh
+        self.triangle_indices = np.hstack(mesh.faces)
         super().__init__(
             shader_folder=shader_folder if shader_folder is not None else "mesh",
             # default params
@@ -50,7 +51,7 @@ class FastManimMesh(OpenGLMobject):
             # regular kwargs
             **remove_keys_from_dict(kwargs, list(OGLM.keys())),
         )
-        self.triangle_indices = np.hstack(mesh.faces)
+        
 
     def init_points(self) -> None:
         self.set_points(self.mesh.vertices)
